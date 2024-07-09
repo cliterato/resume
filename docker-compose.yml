@@ -1,0 +1,19 @@
+# version: '3'
+# services:
+#   angular-app:
+#     image: nginx:alpine
+#     volumes:
+#       - ./src/browser:/usr/share/nginx/html
+#     ports:
+#       - "80:80"
+#     command: ["sh", "-c", "chmod -R 755 /usr/share/nginx/html && nginx -g 'daemon off;'"]
+
+
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
